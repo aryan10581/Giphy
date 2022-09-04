@@ -9,7 +9,7 @@ export default function Home() {
     const [loaded, setloaded] = useState(false)
     const [value, setValue] = useState("Dhoni")
     useEffect(() => {
-        const url = "https://api.giphy.com/v1/gifs/search?api_key=IvQbji2wZATJIYV2PmuwM09kEjWLtay1&q=dhoni&limit=200&offset=0&rating=g&lang=en";
+        const url = `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_API_KEY}&q=dhoni&limit=200&offset=0&rating=g&lang=en`;
         const fetchData = async () => {
             try {
                 const response = await fetch(url);
@@ -29,7 +29,7 @@ export default function Home() {
         setValue(e.target.value)
     }
     const Search = () => {
-        const url = `https://api.giphy.com/v1/gifs/search?api_key=IvQbji2wZATJIYV2PmuwM09kEjWLtay1&q=${value}&limit=200&offset=0&rating=g&lang=en`;
+        const url = `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_API_KEY}&q=${value}&limit=200&offset=0&rating=g&lang=en`;
         const fetchData = async () => {
             try {
                 const response = await fetch(url);
